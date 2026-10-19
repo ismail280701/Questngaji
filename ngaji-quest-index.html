@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#071b3a"><title>Ngaji Quest — Kuis Harian</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+:root{--navy:#071b3a;--blue:#123a68;--gold:#d4af5f;--paper:#f4f7fc;--ink:#14253d;--muted:#708098;--green:#1a9b70;--red:#db6172}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink)}button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:3px solid #8bb8ff;outline-offset:3px}.wrap{max-width:620px;margin:auto;padding:0 17px}.top-space{height:202px}.top{position:fixed;top:0;left:0;right:0;z-index:10;padding:12px 15px 0;pointer-events:none}.top-inner{max-width:586px;margin:auto;border-radius:23px;padding:15px 17px;background:linear-gradient(135deg,#071b3a,#153e6c);box-shadow:0 15px 34px #071b3a3b;color:white;pointer-events:auto;transition:.3s}.brand{display:flex;align-items:center;gap:10px}.logo{display:grid;place-items:center;width:39px;height:39px;border-radius:13px;background:#ffffff19;font-size:22px}.brand strong{display:block;font-size:14px;letter-spacing:.6px}.brand small{color:#c5d6e9;font-size:10px}.sound{margin-left:auto;border:1px solid #ffffff2b;background:#ffffff16;color:white;border-radius:12px;padding:9px}.student{display:flex;align-items:center;justify-content:space-between;margin-top:13px;gap:10px}.student small{font-size:10px;color:#c5d6e9}.student h2{font-size:17px;margin:3px 0 4px}.address{font-size:10px;color:#c5d6e9;line-height:1.5}.points{min-width:102px;text-align:right}.points strong{font-size:27px;color:#f6d37b}.points span{font-size:11px;color:#f6d37b}.progress{height:7px;border-radius:20px;background:#ffffff25;margin-top:12px;overflow:hidden}.progress>div{height:100%;width:0;background:linear-gradient(90deg,#e8bd61,#fff1ac);border-radius:20px;transition:width .6s}.progress-caption{display:flex;justify-content:space-between;font-size:10px;color:#d8e5f3;margin-top:7px}.top.compact .student .address,.top.compact .progress,.top.compact .progress-caption{display:none}.top.compact .top-inner{padding:11px 15px}.top.compact .student{margin-top:7px}.top.compact .points strong{font-size:21px}.hero{margin-top:15px;background:linear-gradient(140deg,#eaf1fc,#fff);border:1px solid #e2eaf5;border-radius:25px;padding:23px 21px;position:relative;overflow:hidden}.hero:after{content:'✦';position:absolute;right:13px;top:3px;font-size:75px;color:#d4af5f25}.eyebrow{font-size:11px;color:#6d7f9a;font-weight:700}.hero h1{font-size:23px;line-height:1.35;margin:10px 0}.hero p{font-size:12px;line-height:1.8;color:#6c7d93;margin:0}.tag{display:inline-flex;align-items:center;gap:5px;margin-top:15px;padding:8px 11px;background:#fff;border-radius:12px;color:#a47a24;font-size:11px;font-weight:800}.section-head{display:flex;align-items:center;justify-content:space-between;margin:27px 1px 14px}.section-head h3{font-size:17px;margin:0}.section-head p{font-size:11px;color:var(--muted);margin:5px 0 0}.pill{font-size:11px;font-weight:800;background:#e5edf9;color:#315985;padding:8px 11px;border-radius:30px}.question-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}.qcard{border:1px solid #e4eaf3;border-radius:18px;background:white;min-height:90px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;box-shadow:0 5px 15px #123a6809;transition:transform .2s,box-shadow .2s;animation:rise .5s both}.qcard:nth-child(2){animation-delay:.07s}.qcard:nth-child(3){animation-delay:.14s}.qcard:nth-child(4){animation-delay:.21s}.qcard:nth-child(5){animation-delay:.28s}.qcard:active{transform:scale(.94)}.qcard b{font-size:24px;color:#17365b}.qcard span{font-size:10px;color:#9cabc0}.qcard.done-yes{background:#eaf9f2;border-color:#bcead3}.qcard.done-no{background:#fff0f2;border-color:#f6cdd3}.qcard.done-yes b{color:var(--green)}.qcard.done-no b{color:var(--red)}.help{margin-top:18px;border:1px solid #e4eaf3;border-radius:20px;background:white;padding:17px;display:flex;align-items:center;justify-content:space-between;gap:10px}.help b{font-size:13px}.help p{font-size:11px;color:var(--muted);margin:6px 0 0;line-height:1.6}.help-count{font-size:13px;font-weight:800;background:#fff4d9;color:#aa7b25;padding:10px 13px;border-radius:13px;white-space:nowrap}.reward{margin-top:17px;border-radius:20px;background:#102d50;color:white;padding:18px;display:flex;gap:14px;align-items:center}.gift{font-size:35px}.reward b{font-size:13px}.reward p{font-size:11px;line-height:1.6;color:#c8d8e8;margin:5px 0 0}.reward button{margin-left:auto;background:var(--gold);border:0;color:#152843;font-weight:800;border-radius:12px;padding:10px 12px;font-size:11px}.reward button:disabled{opacity:.45;cursor:not-allowed}footer{text-align:center;padding:33px 0 26px;font-size:11px;color:#93a0b1;line-height:1.9}.overlay{position:fixed;inset:0;z-index:30;background:#071b3abb;display:flex;align-items:flex-end;justify-content:center;padding:14px;backdrop-filter:blur(5px)}.overlay[hidden]{display:none}.sheet{width:100%;max-width:600px;background:white;border-radius:28px;padding:23px 20px calc(23px + env(safe-area-inset-bottom));box-shadow:0 20px 70px #071b3a50;animation:sheet .28s ease;max-height:90dvh;overflow:auto}.sheet-head{display:flex;justify-content:space-between;align-items:center}.close{background:#f1f5fb;border:0;border-radius:11px;width:35px;height:35px;font-size:20px;color:#53647b}.sheet .number{color:#a57d2f;font-weight:800;font-size:12px}.sheet h2{font-size:22px;line-height:1.55;margin:25px 0}.hint-box{background:#fff7e5;border-radius:15px;padding:14px;font-size:12px;line-height:1.7;color:#76571e;margin-bottom:14px}.hint-btn{border:1px solid #e7d7b6;background:#fffaf0;color:#8c6a26;padding:12px 14px;border-radius:13px;font-weight:800;font-size:12px;width:100%;margin-bottom:15px}.hint-btn:disabled{opacity:.5}.answer-buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px}.answer-buttons button{border:0;border-radius:16px;padding:17px 8px;color:white;font-weight:800;font-size:14px}.wrong{background:#dc6474}.correct{background:#15976f}.answer-buttons button:disabled{opacity:.5}.small-note{font-size:11px;line-height:1.7;color:#8b9bb0;text-align:center;margin:14px 0 0}.result{text-align:center;padding:17px 0}.result .emoji{font-size:58px;animation:pop .5s both}.result h2{margin:12px 0 6px}.result p{color:var(--muted);font-size:12px}.primary{background:#113b69;color:white;border:0;border-radius:14px;padding:14px 20px;font-weight:800;width:100%;margin-top:13px}.spark{position:fixed;pointer-events:none;z-index:50;font-size:26px;animation:float 1.3s ease-out forwards}.reward-note{font-size:11px;color:#8a98aa;line-height:1.7;margin-top:12px;text-align:center}@keyframes rise{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}@keyframes sheet{from{transform:translateY(35px);opacity:.5}to{transform:translateY(0);opacity:1}}@keyframes pop{0%{transform:scale(.5)}65%{transform:scale(1.18)}100%{transform:scale(1)}}@keyframes float{to{transform:translateY(-170px) rotate(55deg);opacity:0}}@media(min-width:650px){.top-space{height:205px}.hero h1{font-size:28px}.qcard{min-height:110px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+.help-title{font-size:12px;font-weight:800;color:#53647b;margin:4px 0 11px}.help-choices{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px}.help-choice{border:1px solid #dbe5f2;background:#f4f8ff;color:#284c77;border-radius:14px;padding:13px 9px;font-size:11px;font-weight:800;line-height:1.5}.help-choice:disabled{opacity:.55}.answer-reveal{margin:12px 0 18px;border:1px solid #b5e6d0;border-radius:18px;background:linear-gradient(140deg,#e7fff3,#f6fffa);padding:18px;animation:pop .4s both}.answer-reveal strong{font-size:11px;color:#16825e;letter-spacing:.5px}.answer-text{font-size:17px;line-height:1.65;font-weight:800;color:#123f31;margin-top:10px}.ayat-box{border-radius:20px;background:linear-gradient(135deg,#102d50,#184975);color:#fff5d6;text-align:center;padding:25px 14px;font-family:"Noto Naskh Arabic","Traditional Arabic",serif;font-size:32px;line-height:2.1;box-shadow:0 10px 24px #071b3a25}.arabic-answer{font-family:"Noto Naskh Arabic","Traditional Arabic",serif;font-size:32px;line-height:2;text-align:center;color:#135d43;margin-top:12px}.result{padding:8px 0}.result h2{margin:6px 0}.result .emoji{font-size:49px}@media(max-width:370px){.help-choices{grid-template-columns:1fr}}
+
+.point-tools{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:14px;
+}
+.point-tools button{
+  border:1px solid #dce5f1;
+  background:#fff;
+  color:#24476f;
+  border-radius:14px;
+  padding:13px 10px;
+  font-size:11px;
+  font-weight:800;
+  line-height:1.6;
+}
+.point-tools button:active{
+  transform:scale(.97);
+}
+#resetPoints{
+  background:#fff0f2;
+  border-color:#f4cbd2;
+  color:#b63e51;
+}
+@media(max-width:370px){
+  .point-tools{
+    grid-template-columns:1fr;
+  }
+}
+
+.editor-sheet{max-height:94dvh}.editor-label{display:block;font-size:12px;font-weight:800;color:#28476d;margin:16px 0 9px}.editor-input{display:block;width:100%;border:1px solid #d9e3ef;border-radius:12px;padding:12px;margin-top:7px;font:inherit;font-size:13px;background:#fbfdff;color:#14253d}.editor-input:focus{outline:2px solid #d4af5f}.editor-item{background:#f3f7fd;border:1px solid #e0e9f5;border-radius:17px;padding:14px;margin-top:16px}.editor-item h3{margin:0 0 10px;font-size:14px}.editor-secondary{width:100%;border:1px solid #dbe4ef;background:white;color:#294b73;border-radius:14px;padding:13px;margin-top:10px;font-weight:800;font-size:12px}.editor-item textarea{min-height:80px;resize:vertical}.editor-item select{appearance:auto}
+</style>
+</head>
+<body>
+<!-- ==========================================================
+     BAGIAN YANG BOLEH MAS MAIL EDIT SETIAP HARI ADA DI BAWAH
+     Cari tulisan: PENGATURAN DAN LIMA SOAL HARIAN
+     ========================================================== -->
+<div class="top-space"></div><div class="top" id="top"><div class="top-inner"><div class="brand"><div class="logo">☪</div><div><strong>NGAJI QUEST</strong><small>Petualangan ilmu setiap hari</small></div><button class="sound" id="sound" aria-label="Aktifkan atau matikan suara">🔊</button></div><div class="student"><div><small>SANTRI HEBAT</small><h2 id="studentName"></h2><div class="address" id="studentAddress"></div></div><div class="points"><strong id="points">0</strong> <span>XP</span></div></div><div class="progress"><div id="bar"></div></div><div class="progress-caption"><span>Perjalanan menuju hadiah 🎁</span><span id="remain">100 poin lagi</span></div></div></div>
+<main class="wrap"><section class="hero"><div class="eyebrow" id="dateLabel"></div><h1>Assalamu'alaikum,<br><span id="firstName"></span>! 👋</h1><p>Siap menjawab tantangan hari ini? Dengarkan pertanyaan dari guru, pikirkan baik-baik, lalu jawab dengan percaya diri!</p><div class="tag">⭐ Satu hari, lima tantangan!</div></section><div class="section-head"><div><h3>🎯 Tantangan Hari Ini</h3><p>Pilih salah satu nomor untuk membuka soal</p></div><span class="pill" id="doneCount">0/5 selesai</span></div><section class="question-grid" id="questions"></section><section class="help"><div><b>💡 Bantuan Guru</b><p>Pilih bantuan: bertanya kepada siapa saja selain guru (2×) atau clue guru (3×).</p></div><div class="help-count" id="helpCount">💡 3 · 🙋 2</div></section><section class="reward"><div class="gift">🎁</div><div><b>Hadiah Spesial</b><p id="rewardText">Kumpulkan 100 poin untuk mendapat hadiah dari guru!</p></div><button id="redeem" disabled>Tukar</button></section>
+<div class="point-tools">
+  <button id="editQuiz">📝 Kelola Soal & Santri</button>
+  <button id="exportQuiz">📤 Cadangkan Soal</button>
+  <button id="importQuiz">📥 Impor Soal</button>
+  <button id="editPoints">✏️ Atur Total Poin</button>
+  <button id="resetPoints">↺ Reset Poin ke 0</button>
+</div>
+<input type="file" id="importFile" accept=".json,application/json" hidden>
+<p class="reward-note">Poin disimpan pada browser HP ini. Guru dapat mengatur total poin kapan saja.</p>
+<footer>☪ NGAJI QUEST<br>Belajar dengan semangat, tumbuh dengan ilmu ✨</footer></main>
+<div class="overlay" id="editorOverlay" hidden><div class="sheet editor-sheet" role="dialog" aria-modal="true" aria-label="Editor soal"><div class="sheet-head"><b>📝 Kelola Soal Ngaji Quest</b><button class="close" id="closeEditor">×</button></div><p class="small-note" style="text-align:left">Perubahan tersimpan di browser perangkat ini. Tekan “Paket Pertemuan Baru” untuk mengulang status 5 soal tanpa menghapus XP.</p><label class="editor-label">Nama santri<input id="editorName" class="editor-input"></label><label class="editor-label">Alamat santri<input id="editorAddress" class="editor-input"></label><label class="editor-label">Kode pertemuan<input id="editorCode" class="editor-input"></label><div id="editorQuestions"></div><button class="primary" id="saveEditor">💾 Simpan Perubahan</button><button class="editor-secondary" id="newSession">🔄 Paket Pertemuan Baru (reset status soal)</button><button class="editor-secondary" id="restoreDefault">↩ Kembalikan Soal Bawaan</button></div></div>
+<div class="overlay" id="overlay" hidden><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="questionTitle"><div class="sheet-head"><span class="number" id="questionNumber"></span><button class="close" id="close" aria-label="Tutup soal">×</button></div><div id="questionBody"></div></div></div>
+<script>
+/* ============================================================
+   ✏️ PENGATURAN DAN LIMA SOAL HARIAN — EDIT BAGIAN INI SAJA
+   ============================================================
+   1. Ubah nama dan alamat santri di bawah.
+   2. Ubah lima teks 'soal' setiap hari sebelum mengajar.
+   3. Ubah 'petunjuk' jika ingin menyiapkan bantuan.
+   4. PENTING: ubah KODE_KUIS setiap kali mengganti paket soal,
+      misalnya '2026-10-15' atau 'pertemuan-01'.
+      Ini membuat status soal dan bantuan kembali baru.
+      Total poin tetap tersimpan.
+   ============================================================ */
+let NAMA_SANTRI = 'Dana Yaksa Arif Gibran';
+let ALAMAT_SANTRI = 'Bergas, Kabupaten Semarang';
+let KODE_KUIS = 'pertemuan-03';
+let SOAL_HARIAN = [
+  {jenis:'lanjutkan-ayat', soal:'Lanjutkan ayat berikut:', ayat:'﴾بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ وَالضُّحَىٰ ﴿١﴾ وَاللَّيْلِ إِذَا سَجَىٰ ﴿٢﴾ مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ ﴿٣﴾ وَلَلْآخِرَةُ خَيْرٌ لَكَ مِنَ الْأُولَىٰ ﴿٤﴾ وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ ﴿٥﴾ أَلَمْ يَجِدْكَ يَتِيمًا فَآوَىٰ ﴿٦﴾ وَوَجَدَكَ ضَالًّا فَهَدَىٰ ﴿٧﴾ وَوَجَدَكَ عَائِلًا فَأَغْنَىٰ ﴿٨', Jawaban:'فَأَمَّا الْيَتِيمَ فَلَا تَقْهَرْ ﴿٩﴾ وَأَمَّا السَّائِلَ فَلَا تَنْهَرْ ﴿١٠﴾ وَأَمَّا بِنِعْمَةِ رَبِّكَ فَحَدِّثْ ﴿١١', petunjuk:'Pada tiga ayat terakhir ini, Allah mengajarkan kita agar tidak berlaku kasar kepada anak yatim, tidak membentak orang yang meminta bantuan, dan selalu bersyukur atas nikmat Allah.'},
+  {jenis:'lanjutkan-ayat', soal:'Lanjutkan ayat berikut:', ayat:'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ وَالتِّينِ وَالزَّيْتُونِ ﴿١﴾ وَطُورِ سِينِينَ ﴿٢﴾ وَهَٰذَا الْبَلَدِ الْأَمِينِ ﴿٣﴾ لَقَدْ خَلَقْنَا الْإِنْسَانَ فِي أَحْسَنِ تَقْوِيمٍ ﴿٤﴾ ثُمَّ رَدَدْنَاهُ أَسْفَلَ سَافِلِينَ ﴿٥﴾', Jawaban:'إِلَّا الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ فَلَهُمْ أَجْرٌ غَيْرُ مَمْنُونٍ ﴿٦﴾ فَمَا يُكَذِّبُكَ بَعْدُ بِالدِّينِ ﴿٧﴾ أَلَيْسَ اللَّهُ بِأَحْكَمِ الْحَاكِمِينَ ﴿٨﴾', petunjuk:'Lanjutkan 3 ayat terakhir Surah At-Tin! Ayat-ayat ini menjelaskan bahwa orang yang beriman dan beramal saleh akan mendapatkan pahala yang tidak terputus. Di akhir surah, Allah mengingatkan bahwa Dia adalah hakim yang paling adil.'},
+  {jenis:'umum', soal:'Sebutkan ayat ke 11 surat Al Adiyat', jawaban:'إِنَّ رَبَّهُمْ بِهِمْ يَوْمَئِذٍ لَخَبِيرٌ ﴿١١﴾', petunjuk:'Di awali dengan إِنَّ رَبَّهُمْ '},
+  {jenis:'umum', soal:'Sebutkan surat Al Maun ayat 6!', jawaban:'الَّذِينَ هُمْ يُرَاءُونَ ﴿٦﴾', petunjuk:'Di awali dengan lafadz الَّذِينَ'},
+  {jenis:'umum', soal:'Perhatikan ayat Al-Quran berikut ini! إِذَا زُلْزِلَتِ الْأَرْضُ زِلْزَالَهَا ﴿١﴾ وَأَخْرَجَتِ الْأَرْضُ أَثْقَالَهَا ﴿٢﴾ Setelah melewati satu ayat dari bacaan di atas, sebutkan dua ayat berikutnya secara berurutan!', jawaban:'يَوْمَئِذٍ تُحَدِّثُ أَخْبَارَهَا ﴿٤﴾ بِأَنَّ رَبَّكَ أَوْحَىٰ لَهَا ﴿٥﴾', petunjuk:'Di awali dengan lafadz يَوْمَئِذٍ'}
+];
+/* =================== AKHIR BAGIAN EDIT =================== */
+const STORAGE='ngaji-quest-v1';
+const EDITOR_STORAGE='ngaji-quest-editor-v1';
+const DEFAULT_CONFIG=JSON.parse(JSON.stringify({nama:NAMA_SANTRI,alamat:ALAMAT_SANTRI,kode:KODE_KUIS,soal:SOAL_HARIAN}));
+function applyConfig(c){
+ if(!c||!Array.isArray(c.soal)||c.soal.length!==5)return false;
+ NAMA_SANTRI=String(c.nama||'Santri');ALAMAT_SANTRI=String(c.alamat||'');KODE_KUIS=String(c.kode||'pertemuan-01');
+ SOAL_HARIAN=c.soal.map(q=>({jenis:q.jenis==='lanjutkan-ayat'?'lanjutkan-ayat':'umum',soal:String(q.soal||''),ayat:String(q.ayat||''),jawaban:String(q.jawaban||q.Jawaban||''),petunjuk:String(q.petunjuk||'')}));return true;
+}
+try{const saved=JSON.parse(localStorage.getItem(EDITOR_STORAGE));if(saved)applyConfig(saved)}catch(e){console.warn(e)}
+function initial(){return {points:0,code:KODE_KUIS,results:{},usedHints:0,usedAsks:0,shownHints:{},askedQuestions:{},history:[]}}
+
+function load(){
+  try{
+    const raw=JSON.parse(localStorage.getItem(STORAGE));
+    if(!raw||typeof raw!=='object')return initial();
+
+    const s={...initial(),...raw};
+    const savedPoints=Number(s.points);
+    s.points=Number.isFinite(savedPoints)?savedPoints:0;
+
+    if(s.code!==KODE_KUIS){
+      s.code=KODE_KUIS;
+      s.results={};
+      s.usedHints=0;
+      s.usedAsks=0;
+      s.shownHints={};
+      s.askedQuestions={};
+    }
+
+    return s;
+  }catch{
+    return initial();
+  }
+}
+
+let state=load(),active=-1,muted=false,ctx;
+function save(){try{localStorage.setItem(STORAGE,JSON.stringify(state))}catch{alert('Penyimpanan browser tidak tersedia. Poin mungkin tidak tersimpan.')}}
+function audio(ok){
+ if(muted)return;
+ try{
+  ctx=ctx||new(window.AudioContext||window.webkitAudioContext)();
+  if(ctx.state==='suspended')ctx.resume();
+  const start=ctx.currentTime+.025;
+  // Nada bertumpuk dan ritme lebih meriah, tanpa memerlukan berkas audio.
+  const melody=ok
+   ? [[523,0,.13],[659,.11,.13],[784,.22,.16],[1047,.36,.26],[784,.37,.25],[1047,.66,.32],[1319,.78,.32]]
+   : [[392,0,.16],[311,.18,.16],[247,.36,.16],[196,.54,.24],[165,.79,.3]];
+  melody.forEach(([hz,offset,dur],i)=>{
+   const t=start+offset, osc=ctx.createOscillator(),gain=ctx.createGain();
+   osc.type=ok?(i%2?'triangle':'square'):'sawtooth';
+   osc.frequency.setValueAtTime(hz,t);
+   if(!ok)osc.frequency.exponentialRampToValueAtTime(Math.max(90,hz*.72),t+dur);
+   gain.gain.setValueAtTime(.0001,t);
+   gain.gain.exponentialRampToValueAtTime(ok?.19:.15,t+.012);
+   gain.gain.exponentialRampToValueAtTime(.0001,t+dur);
+   osc.connect(gain).connect(ctx.destination);osc.start(t);osc.stop(t+dur+.02);
+  });
+  if(ok){
+   // Efek sorak "yeee!" sintetis dengan gelombang suara yang bergerak.
+   const t=start+.15,o=ctx.createOscillator(),g=ctx.createGain(),f=ctx.createBiquadFilter();
+   o.type='sawtooth';o.frequency.setValueAtTime(360,t);
+   o.frequency.linearRampToValueAtTime(650,t+.25);
+   o.frequency.linearRampToValueAtTime(560,t+.65);
+   f.type='bandpass';f.frequency.value=1150;f.Q.value=.8;
+   g.gain.setValueAtTime(.0001,t);g.gain.linearRampToValueAtTime(.14,t+.1);
+   g.gain.setValueAtTime(.14,t+.45);g.gain.exponentialRampToValueAtTime(.0001,t+.75);
+   o.connect(f).connect(g).connect(ctx.destination);o.start(t);o.stop(t+.76);
+  }
+ }catch(e){console.warn('Audio tidak tersedia',e)}
+}
+function celebrate(){for(let i=0;i<14;i++){const el=document.createElement('span');el.className='spark';el.textContent=['⭐','✨','🎉','🌟'][i%4];el.style.left=(12+Math.random()*76)+'vw';el.style.top=(50+Math.random()*38)+'vh';el.style.animationDelay=(Math.random()*.35)+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),1800)}}
+function dateText(){return new Intl.DateTimeFormat('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date())}
+function render(){document.getElementById('studentName').textContent=NAMA_SANTRI;document.getElementById('studentAddress').textContent='📍 '+ALAMAT_SANTRI;document.getElementById('firstName').textContent=NAMA_SANTRI.trim().split(/\s+/)[0];document.getElementById('dateLabel').textContent='📅 '+dateText();document.getElementById('points').textContent=state.points;
+const toward=Math.max(0,Math.min(100,state.points));
+
+document.getElementById('bar').style.width=toward+'%';
+
+document.getElementById('remain').textContent=
+  state.points>=100
+    ?'Hadiah siap ditukar!'
+    :(100-state.points)+' poin lagi';
+
+document.getElementById('rewardText').textContent=
+  state.points>=100
+    ?'Selamat! Hadiah siap diberikan oleh guru.'
+    :'Kumpulkan 100 poin untuk mendapat hadiah dari guru!';
+
+document.getElementById('redeem').disabled=state.points<100;
+document.getElementById('redeem').disabled=state.points<100;const count=Object.keys(state.results).length;document.getElementById('doneCount').textContent=count+'/5 selesai';const grid=document.getElementById('questions');grid.innerHTML='';SOAL_HARIAN.forEach((q,i)=>{const val=state.results[i];const btn=document.createElement('button');btn.className='qcard '+(val==='benar'?'done-yes':val==='salah'?'done-no':'');btn.innerHTML='<b>'+(i+1)+'</b><span>'+(val==='benar'?'✓ Benar':val==='salah'?'✕ Salah':'Buka soal')+'</span>';btn.setAttribute('aria-label','Soal '+(i+1));btn.addEventListener('click',()=>openQuestion(i));grid.appendChild(btn)});save()}
+function openQuestion(i){
+ active=i;
+ const overlay=document.getElementById('overlay'),body=document.getElementById('questionBody');
+ const q=SOAL_HARIAN[i];
+ document.getElementById('questionNumber').textContent='TANTANGAN '+(i+1)+' DARI 5';
+ body.replaceChildren();
+ const title=document.createElement('h2');title.id='questionTitle';title.textContent=q.soal;body.appendChild(title);
+ if(q.jenis==='lanjutkan-ayat'){
+  const ayat=document.createElement('div');ayat.className='ayat-box';ayat.lang='ar';ayat.dir='rtl';ayat.textContent=q.ayat||'';
+  body.appendChild(ayat);
+  const sub=document.createElement('p');sub.className='small-note';sub.textContent='📖 Dengarkan ayatnya, lalu lanjutkan secara lisan.';body.appendChild(sub);
+ }
+ if(state.results[i]){
+  const result=document.createElement('div');result.className='result';
+  const emoji=document.createElement('div');emoji.className='emoji';emoji.textContent=state.results[i]==='benar'?'🎉':'💪';
+  const heading=document.createElement('h2');heading.textContent=state.results[i]==='benar'?'Masya Allah, benar!':'Tetap semangat!';
+  const p=document.createElement('p');p.textContent='Soal ini sudah dinilai. Yuk, pelajari jawaban yang benar!';
+  result.append(emoji,heading,p);body.appendChild(result);
+  const answer=document.createElement('div');answer.className='answer-reveal';
+  const label=document.createElement('strong');label.textContent='✓ JAWABAN YANG BENAR';
+  const value=document.createElement('div');value.className=q.jenis==='lanjutkan-ayat'?'arabic-answer':'answer-text';
+  value.textContent=q.jawaban||'Jawaban belum diisi oleh guru.';
+  if(q.jenis==='lanjutkan-ayat'){value.lang='ar';value.dir='rtl'}
+  answer.append(label,value);body.appendChild(answer);
+ }else{
+  const helpTitle=document.createElement('div');helpTitle.className='help-title';helpTitle.textContent='🪄 Pilih bantuan jika diperlukan';body.appendChild(helpTitle);
+  const helpChoices=document.createElement('div');helpChoices.className='help-choices';
+  const ask=document.createElement('button');ask.className='help-choice';
+  ask.textContent=state.askedQuestions[i]?'✓ Sudah bertanya':'🙋 Bertanya ke orang lain ('+(2-(state.usedAsks||0))+'/2)';
+  ask.disabled=!!state.askedQuestions[i]||(state.usedAsks||0)>=2;
+  ask.onclick=()=>{
+   if(state.askedQuestions[i]||(state.usedAsks||0)>=2)return;
+   if(!confirm('Gunakan 1 kesempatan bertanya kepada siapa saja selain guru untuk soal ini?'))return;
+   state.usedAsks=(state.usedAsks||0)+1;state.askedQuestions[i]=true;save();render();openQuestion(i);
+  };
+  const clue=document.createElement('button');clue.className='help-choice';
+  clue.textContent=state.shownHints[i]?'✓ Clue dibuka':'💡 Clue guru ('+(3-state.usedHints)+'/3)';
+  clue.disabled=!!state.shownHints[i]||state.usedHints>=3;
+  clue.onclick=()=>{
+   if(state.usedHints>=3||state.shownHints[i])return;
+   state.usedHints++;state.shownHints[i]=true;save();render();openQuestion(i);
+  };
+  helpChoices.append(ask,clue);body.appendChild(helpChoices);
+  if(state.askedQuestions[i]){
+   const info=document.createElement('div');info.className='hint-box';
+   info.textContent='🙋 Kesempatan bertanya digunakan. Santri boleh bertanya kepada orang tua, kakak, atau siapa saja selain guru.';
+   body.appendChild(info);
+  }
+  if(state.shownHints[i]){
+   const hint=document.createElement('div');hint.className='hint-box';
+   hint.textContent='💡 Clue guru: '+(q.petunjuk||'Coba ingat kembali materi yang dipelajari.');
+   body.appendChild(hint);
+  }
+  const buttons=document.createElement('div');buttons.className='answer-buttons';
+  [['salah','✕ Salah −5'],['benar','✓ Benar +5']].forEach(([type,label])=>{
+   const b=document.createElement('button');b.className=type==='benar'?'correct':'wrong';
+   b.textContent=label;b.onclick=()=>judge(i,type);buttons.appendChild(b)
+  });
+  body.appendChild(buttons);
+  const note=document.createElement('p');note.className='small-note';
+  note.textContent='Guru membacakan soal dan menilai jawaban santri. Setelah dinilai, kunci jawaban langsung muncul.';
+  body.appendChild(note);
+ }
+ overlay.hidden=false;document.body.style.overflow='hidden';
+}
+function closeQuestion(){document.getElementById('overlay').hidden=true;document.body.style.overflow='';active=-1}
+
+function judge(i,type){
+  if(state.results[i])return;
+
+  state.results[i]=type;
+
+  if(type==='benar'){
+    state.points+=5;
+  }else{
+    state.points-=5;
+  }
+
+  state.history.push({
+    code:KODE_KUIS,
+    number:i+1,
+    result:type,
+    points:state.points,
+    at:new Date().toISOString()
+  });
+
+  save();
+  audio(type==='benar');
+
+  if(type==='benar')celebrate();
+
+  render();openQuestion(i);
+}
+function setPoints(value,label){
+ const old=state.points;state.points=value;state.history.push({code:KODE_KUIS,result:label,previousPoints:old,points:value,at:new Date().toISOString()});save();render();
+}
+document.getElementById('editPoints').onclick=()=>{const input=prompt('Masukkan total poin baru (boleh negatif):',String(state.points));if(input===null)return;if(!input.trim()||!Number.isFinite(Number(input)))return alert('Masukkan angka yang valid.');setPoints(Number(input),'edit-poin')};
+document.getElementById('resetPoints').onclick=()=>{if(confirm('Reset total poin menjadi 0? Hasil soal dan bantuan tidak dihapus.'))setPoints(0,'reset-poin')};
+function editorField(label,value,key,multiline=false){const wrap=document.createElement('label');wrap.className='editor-label';wrap.textContent=label;const el=document.createElement(multiline?'textarea':'input');el.className='editor-input';el.value=value||'';el.dataset.key=key;wrap.appendChild(el);return wrap}
+function showEditor(){
+ document.getElementById('editorName').value=NAMA_SANTRI;document.getElementById('editorAddress').value=ALAMAT_SANTRI;document.getElementById('editorCode').value=KODE_KUIS;
+ const root=document.getElementById('editorQuestions');root.replaceChildren();
+ SOAL_HARIAN.forEach((q,i)=>{const card=document.createElement('div');card.className='editor-item';card.dataset.index=i;const h=document.createElement('h3');h.textContent='Soal '+(i+1);card.appendChild(h);const label=document.createElement('label');label.className='editor-label';label.textContent='Jenis soal';const select=document.createElement('select');select.className='editor-input';select.dataset.key='jenis';[['umum','Pertanyaan umum'],['lanjutkan-ayat','Lanjutkan ayat (teks Arab)']].forEach(([v,t])=>{const opt=document.createElement('option');opt.value=v;opt.textContent=t;select.appendChild(opt)});select.value=q.jenis;label.appendChild(select);card.appendChild(label);card.appendChild(editorField('Pertanyaan',q.soal,'soal',true));card.appendChild(editorField('Ayat yang ditampilkan (untuk jenis lanjutkan ayat)',q.ayat,'ayat',true));card.appendChild(editorField('Kunci jawaban',q.jawaban||q.Jawaban,'jawaban',true));card.appendChild(editorField('Petunjuk / clue',q.petunjuk,'petunjuk',true));root.appendChild(card)});
+ document.getElementById('editorOverlay').hidden=false;document.body.style.overflow='hidden';
+}
+function closeEditor(){document.getElementById('editorOverlay').hidden=true;document.body.style.overflow=''}
+function collectEditor(){return {nama:document.getElementById('editorName').value.trim(),alamat:document.getElementById('editorAddress').value.trim(),kode:document.getElementById('editorCode').value.trim(),soal:[...document.querySelectorAll('.editor-item')].map(card=>Object.fromEntries([...card.querySelectorAll('[data-key]')].map(el=>[el.dataset.key,el.value.trim()])))}}
+function commitConfig(c){if(!c.nama||!c.kode||c.soal.some(q=>!q.soal))return alert('Nama, kode pertemuan, dan semua pertanyaan wajib diisi.');const previous=KODE_KUIS;if(!applyConfig(c))return alert('Format soal tidak sesuai.');try{localStorage.setItem(EDITOR_STORAGE,JSON.stringify(c))}catch(e){return alert('Gagal menyimpan di browser. Periksa ruang penyimpanan.')}if(previous!==KODE_KUIS){state.code=KODE_KUIS;state.results={};state.usedHints=0;state.usedAsks=0;state.shownHints={};state.askedQuestions={}}save();render();closeEditor();alert('✅ Soal berhasil disimpan di browser ini!')}
+document.getElementById('editQuiz').onclick=showEditor;
+document.getElementById('closeEditor').onclick=closeEditor;
+document.getElementById('editorOverlay').addEventListener('click',e=>{if(e.target.id==='editorOverlay')closeEditor()});
+document.getElementById('saveEditor').onclick=()=>commitConfig(collectEditor());
+document.getElementById('newSession').onclick=()=>{if(!confirm('Mulai pertemuan baru? Status jawaban dan bantuan direset, tetapi total XP tetap.'))return;const c=collectEditor();c.kode='pertemuan-'+new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,14);commitConfig(c)};
+document.getElementById('restoreDefault').onclick=()=>{if(confirm('Kembalikan isi soal bawaan? Total XP tetap.'))commitConfig(JSON.parse(JSON.stringify(DEFAULT_CONFIG)))};
+document.getElementById('exportQuiz').onclick=()=>{const c={nama:NAMA_SANTRI,alamat:ALAMAT_SANTRI,kode:KODE_KUIS,soal:SOAL_HARIAN};const blob=new Blob([JSON.stringify(c,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='cadangan-ngaji-quest-'+KODE_KUIS.replace(/[^a-zA-Z0-9_-]/g,'-')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),3000)};
+document.getElementById('importQuiz').onclick=()=>document.getElementById('importFile').click();
+document.getElementById('importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const c=JSON.parse(await f.text());if(!c||!Array.isArray(c.soal)||c.soal.length!==5)throw Error('File harus berisi 5 soal.');if(confirm('Impor 5 soal dari file ini?'))commitConfig(c)}catch(err){alert('File cadangan tidak valid: '+err.message)}e.target.value=''};
+
+document.getElementById('close').onclick=closeQuestion;document.getElementById('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeQuestion()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeQuestion();closeEditor()}});document.getElementById('sound').onclick=()=>{muted=!muted;document.getElementById('sound').textContent=muted?'🔇':'🔊'};document.getElementById('redeem').onclick=()=>{if(state.points<100)return;if(!confirm('Konfirmasi: hadiah sudah diberikan? Tukar 100 poin sekarang?'))return;state.points-=100;state.history.push({code:KODE_KUIS,result:'hadiah',at:new Date().toISOString()});save();audio(true);celebrate();render();alert('🎁 Hadiah berhasil ditukar. Selamat!')};window.addEventListener('scroll',()=>document.getElementById('top').classList.toggle('compact',window.scrollY>75),{passive:true});render();
+</script>
+</body></html>
