@@ -41,6 +41,85 @@
 
 /* PREMIUM REWARD ARENA */
 .reward{background:linear-gradient(120deg,#071b3a,#173e70);border:1px solid #d4af5f55;box-shadow:0 12px 28px #071b3a20}.reward.ready{animation:rewardGlow 2s infinite alternate}.reward.ready button{box-shadow:0 0 20px #f6d37b88}.reward-overlay{z-index:60;align-items:center;background:#030b1de8;backdrop-filter:blur(14px)}.reward-stage{position:relative;width:100%;max-width:610px;max-height:94dvh;overflow:auto;padding:30px 17px 24px;border-radius:28px;text-align:center;color:#fff;background:radial-gradient(ellipse at 50% 15%,#315e91 0%,#10294c 45%,#061327 100%);border:1px solid #d4af5f75;box-shadow:0 0 65px #d4af5f2a;animation:stageEnter .45s both}.reward-stage:before{content:'✦  ✧  ✦  ✧  ✦';position:absolute;top:70px;left:0;right:0;color:#eac97e44;font-size:27px;letter-spacing:15px;pointer-events:none}.reward-close{position:absolute;right:15px;top:14px;border:1px solid #ffffff38;background:#ffffff18;color:white;border-radius:12px;width:36px;height:36px;font-size:23px}.reward-kicker{color:#f2d28b;letter-spacing:3px;font-size:10px;font-weight:800}.reward-stage h2{font-size:25px;line-height:1.3;margin:12px 0}.reward-sub{font-size:12px;line-height:1.8;color:#cbd9ec;max-width:390px;margin:0 auto 23px}.gift-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:22px 0}.mystery-gift{position:relative;min-width:0;min-height:170px;border:1px solid #f7d99077;border-radius:21px;background:linear-gradient(150deg,#244e81,#0b2547);color:white;overflow:hidden;box-shadow:inset 0 0 25px #ffffff0b,0 13px 25px #0004;animation:giftFloat 2.5s ease-in-out infinite}.mystery-gift:nth-child(2){animation-delay:.35s}.mystery-gift:nth-child(3){animation-delay:.7s}.mystery-gift:disabled{opacity:.55;cursor:default}.gift-emoji{display:block;font-size:68px;filter:drop-shadow(0 8px 8px #0006);transition:transform .3s}.mystery-gift:not(:disabled):active .gift-emoji{transform:scale(1.2) rotate(-8deg)}.gift-label{display:block;margin-top:9px;font-size:11px;font-weight:800;color:#f5dc9f}.reward-result[hidden],.gift-grid[hidden],.reward-actions[hidden]{display:none}.reward-result{animation:stageEnter .6s both}.reward-photo{width:min(210px,65vw);height:190px;object-fit:contain;border-radius:22px;background:linear-gradient(145deg,#ffffff18,#ffffff05);border:1px solid #ffffff38;padding:12px;box-shadow:0 0 40px #e8bd6140;animation:revealGift .8s both}.reward-result h3{color:#ffe39d;font-size:23px;margin:15px 0 6px}.reward-result p{color:#d6e2f2;font-size:12px;line-height:1.8}.reward-actions{display:grid;gap:9px;margin-top:17px}.reward-action{border:0;border-radius:15px;padding:14px;font-weight:800;font-size:12px;background:linear-gradient(110deg,#e7bc62,#ffebad);color:#1b2b42}.reward-action.secondary{background:#ffffff19;color:#fff;border:1px solid #ffffff45}.reward-tiny{font-size:10px;color:#afc1d7;line-height:1.7;margin:15px 0 0}.reward-history{font-size:11px;line-height:1.8;color:#e8d3a0;margin-top:10px}@keyframes giftFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}@keyframes stageEnter{from{opacity:0;transform:scale(.87) translateY(24px)}to{opacity:1;transform:scale(1) translateY(0)}}@keyframes revealGift{0%{opacity:0;transform:scale(.25) rotate(-22deg)}65%{transform:scale(1.14) rotate(6deg)}100%{opacity:1;transform:scale(1) rotate(0)}}@keyframes rewardGlow{from{box-shadow:0 0 8px #d4af5f33}to{box-shadow:0 0 25px #d4af5f99}}@media(max-width:370px){.mystery-gift{min-height:145px}.gift-emoji{font-size:51px}.gift-grid{gap:6px}.reward-stage{padding:27px 10px 17px}}@media(prefers-reduced-motion:reduce){.mystery-gift,.reward.ready{animation:none}}
+
+/* NGAJI QUEST — REWARD EXCHANGE PREMIUM */
+
+.reward-map-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 13px 16px;
+  border: 1px solid #6be3b2;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #15976f, #087b61);
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  box-shadow: 0 8px 22px #009b7040;
+  transition: transform .2s ease;
+}
+
+.reward-map-link:active {
+  transform: scale(.97);
+}
+
+.reward-map-link[hidden] {
+  display: none;
+}
+
+.reward-exchange-info {
+  margin: 3px 0 0;
+  color: #d6e2f2;
+  font-size: 11px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.reward-choice {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.reward-choice .reward-action {
+  min-height: 48px;
+}
+
+.reward-action.accept {
+  background: linear-gradient(135deg, #e7bc62, #ffebad);
+  color: #1b2b42;
+}
+
+.reward-action.change {
+  background: linear-gradient(135deg, #244b7b, #153254);
+  border: 1px solid #d4af5f88;
+  color: #ffe6a3;
+}
+
+.reward-action:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.reward-accepted {
+  padding: 12px 14px;
+  border: 1px solid #6be3b277;
+  border-radius: 14px;
+  background: #15976f25;
+  color: #bff5dc;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.7;
+}
+
+.reward-stage a:focus-visible,
+.reward-stage button:focus-visible {
+  outline: 3px solid #ffe39d;
+  outline-offset: 3px;
+}
 </style>
 </head>
 <body>
@@ -320,5 +399,383 @@ document.getElementById('importQuiz').onclick=()=>document.getElementById('impor
 document.getElementById('importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const c=JSON.parse(await f.text());if(!c||!Array.isArray(c.soal)||c.soal.length!==5)throw Error('File harus berisi 5 soal.');if(confirm('Impor 5 soal dari file ini?'))commitConfig(c)}catch(err){alert('File cadangan tidak valid: '+err.message)}e.target.value=''};
 
 document.getElementById('close').onclick=closeQuestion;document.getElementById('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeQuestion()});document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeQuestion();closeEditor();closeReward()}});document.getElementById('sound').onclick=()=>{muted=!muted;document.getElementById('sound').textContent=muted?'🔇':'🔊'};window.addEventListener('scroll',()=>document.getElementById('top').classList.toggle('compact',window.scrollY>75),{passive:true});render();
+
+/* ============================================================
+   NGAJI QUEST PREMIUM — GOOGLE MAPS & GANTI HADIAH
+   ============================================================
+   Fitur:
+   1. Lokasi pembelian hadiah melalui Google Maps.
+   2. Santri dapat menerima atau mengganti hadiah.
+   3. Maksimal dua kali penggantian hadiah.
+   4. Hadiah pengganti tidak berulang.
+   5. Pilihan hadiah tersimpan di browser.
+   6. XP dipotong hanya setelah konfirmasi guru.
+   ============================================================ */
+
+const MAX_GANTI_HADIAH = 2;
+
+/* LOKASI PEMBELIAN HADIAH */
+
+const HADIAH_MAPS = [
+  {
+    nama: 'Ayam Champion',
+    maps: 'https://www.google.com/maps/search/?api=1&query=ayam+geprek+Bergas+Kabupaten+Semarang'
+  },
+  {
+    nama: 'Kebab Sultan',
+    maps: 'https://www.google.com/maps/search/?api=1&query=kebab+Bergas+Kabupaten+Semarang'
+  },
+  {
+    nama: 'Mie Juara',
+    maps: 'https://www.google.com/maps/search/?api=1&query=Mie+Gacoan+Ungaran'
+  }
+];
+
+/* HUBUNGKAN MAPS DENGAN HADIAH YANG SUDAH ADA */
+
+DAFTAR_HADIAH.forEach(gift => {
+  const location = HADIAH_MAPS.find(item => item.nama === gift.nama);
+  gift.maps = location ? location.maps : '';
+});
+
+/* TAMBAHKAN TOMBOL KE ARENA HADIAH */
+
+function setupRewardExtras() {
+  const actions = document.getElementById('rewardActions');
+  const confirmButton = document.getElementById('confirmReward');
+  const laterButton = document.getElementById('laterReward');
+
+  if (!actions || !confirmButton || !laterButton) return;
+
+  const choice = document.createElement('div');
+  choice.className = 'reward-choice';
+  choice.id = 'rewardChoice';
+
+  const acceptButton = document.createElement('button');
+  acceptButton.id = 'acceptReward';
+  acceptButton.type = 'button';
+  acceptButton.className = 'reward-action accept';
+  acceptButton.textContent = '✓ Terima Hadiah Ini';
+
+  const changeButton = document.createElement('button');
+  changeButton.id = 'changeReward';
+  changeButton.type = 'button';
+  changeButton.className = 'reward-action change';
+  changeButton.textContent = '🔄 Ganti Hadiah';
+
+  const exchangeInfo = document.createElement('p');
+  exchangeInfo.id = 'rewardExchangeInfo';
+  exchangeInfo.className = 'reward-exchange-info';
+
+  const acceptedInfo = document.createElement('div');
+  acceptedInfo.id = 'rewardAcceptedInfo';
+  acceptedInfo.className = 'reward-accepted';
+  acceptedInfo.textContent = '✓ Hadiah diterima! Menunggu guru menyerahkan hadiah.';
+  acceptedInfo.hidden = true;
+
+  const mapsButton = document.createElement('a');
+  mapsButton.id = 'rewardMaps';
+  mapsButton.className = 'reward-map-link';
+  mapsButton.href = '#';
+  mapsButton.target = '_blank';
+  mapsButton.rel = 'noopener noreferrer';
+  mapsButton.textContent = '📍 Lihat Lokasi Pembelian';
+
+  choice.append(
+    mapsButton,
+    acceptButton,
+    changeButton,
+    exchangeInfo,
+    acceptedInfo
+  );
+
+  actions.insertBefore(choice, confirmButton);
+
+  acceptButton.addEventListener('click', acceptReward);
+  changeButton.addEventListener('click', changeReward);
+
+  updateRewardExtras();
+}
+
+/* PERBARUI TAMPILAN PILIHAN HADIAH */
+
+function updateRewardExtras() {
+  const pending = rewardData.pending;
+  const choice = document.getElementById('rewardChoice');
+  const mapsButton = document.getElementById('rewardMaps');
+  const acceptButton = document.getElementById('acceptReward');
+  const changeButton = document.getElementById('changeReward');
+  const exchangeInfo = document.getElementById('rewardExchangeInfo');
+  const acceptedInfo = document.getElementById('rewardAcceptedInfo');
+  const confirmButton = document.getElementById('confirmReward');
+
+  if (!choice || !pending) {
+    if (choice) choice.hidden = true;
+    return;
+  }
+
+  const gift = DAFTAR_HADIAH[pending.index] || DAFTAR_HADIAH[0];
+  const used = Number(pending.exchanges) || 0;
+  const remaining = Math.max(0, MAX_GANTI_HADIAH - used);
+  const accepted = pending.accepted === true;
+
+  choice.hidden = false;
+
+  mapsButton.href = gift.maps || '#';
+  mapsButton.hidden = !gift.maps;
+
+  acceptButton.hidden = accepted;
+  changeButton.hidden = accepted;
+  acceptedInfo.hidden = !accepted;
+
+  changeButton.disabled = remaining === 0;
+
+  changeButton.textContent = remaining > 0
+    ? '🔄 Ganti Hadiah (' + remaining + ' kesempatan)'
+    : '🔒 Kesempatan Ganti Habis';
+
+  exchangeInfo.textContent = accepted
+    ? 'Pilihan hadiah sudah diterima dan tersimpan.'
+    : remaining > 0
+      ? 'Jika hadiah kurang cocok, kamu masih bisa mengganti ' + remaining + ' kali.'
+      : 'Kesempatan mengganti hadiah sudah habis.';
+
+  confirmButton.hidden = !accepted;
+  confirmButton.disabled = !accepted;
+
+  confirmButton.textContent =
+    '✓ Guru Konfirmasi Hadiah Diberikan (−100 XP)';
+}
+
+/* TERIMA HADIAH */
+
+function acceptReward() {
+  if (openingGift || !rewardData.pending || state.points < 100) return;
+
+  const gift = DAFTAR_HADIAH[rewardData.pending.index];
+
+  if (!gift) return;
+
+  const approved = confirm(
+    'Terima hadiah ' + gift.nama + '?\n\n' +
+    'Setelah diterima, hadiah tidak dapat diganti lagi.\n\n' +
+    '100 XP belum dipotong sampai guru menyerahkan hadiah.'
+  );
+
+  if (!approved) return;
+
+  rewardData.pending.accepted = true;
+  rewardData.pending.acceptedAt = new Date().toISOString();
+
+  saveReward();
+  rewardSound();
+  rewardConfetti();
+  updateRewardExtras();
+}
+
+/* GANTI HADIAH */
+
+function changeReward() {
+  if (openingGift || !rewardData.pending || state.points < 100) return;
+
+  const pending = rewardData.pending;
+  const used = Number(pending.exchanges) || 0;
+
+  if (pending.accepted === true) {
+    alert('Hadiah sudah diterima dan tidak dapat diganti lagi.');
+    return;
+  }
+
+  if (used >= MAX_GANTI_HADIAH) {
+    alert('Kesempatan mengganti hadiah sudah habis.');
+    return;
+  }
+
+  const approved = confirm(
+    'Ingin mengganti hadiah?\n\n' +
+    'Hadiah baru akan dipilih secara acak.\n' +
+    'Hadiah sebelumnya tidak akan muncul lagi.\n\n' +
+    'XP kamu tidak akan berkurang.'
+  );
+
+  if (!approved) return;
+
+  const visited = Array.isArray(pending.visited)
+    ? pending.visited
+    : [];
+
+  const excluded = new Set([
+    ...visited,
+    pending.index
+  ]);
+
+  const available = DAFTAR_HADIAH
+    .map((gift, index) => index)
+    .filter(index => !excluded.has(index));
+
+  if (!available.length) {
+    alert('Semua pilihan hadiah sudah pernah muncul.');
+    return;
+  }
+
+  const nextIndex = available[
+    Math.floor(Math.random() * available.length)
+  ];
+
+  openingGift = true;
+
+  const result = document.getElementById('rewardResult');
+  const actions = document.getElementById('rewardActions');
+  const grid = document.getElementById('giftGrid');
+  const subtitle = document.getElementById('rewardSubtitle');
+
+  result.hidden = true;
+  actions.hidden = true;
+  grid.hidden = false;
+
+  subtitle.textContent =
+    '✨ Mengacak hadiah baru... Semoga kamu suka!';
+
+  const boxes = [...document.querySelectorAll('.mystery-gift')];
+
+  boxes.forEach(box => {
+    box.disabled = true;
+  });
+
+  let ticks = 0;
+
+  const timer = setInterval(() => {
+    boxes.forEach(box => {
+      box.style.borderColor = '#f7d99077';
+      box.style.filter = 'none';
+    });
+
+    const activeBox = boxes[ticks % boxes.length];
+
+    activeBox.style.borderColor = '#fff';
+    activeBox.style.filter = 'brightness(1.4)';
+
+    ticks++;
+
+    if (ticks >= 12) {
+      clearInterval(timer);
+
+      rewardData.pending = {
+        index: nextIndex,
+        at: new Date().toISOString(),
+        exchanges: used + 1,
+        visited: [...visited, pending.index],
+        accepted: false
+      };
+
+      saveReward();
+
+      boxes.forEach(box => {
+        box.disabled = false;
+        box.style.borderColor = '#f7d99077';
+        box.style.filter = 'none';
+      });
+
+      openingGift = false;
+
+      rewardSound();
+      rewardConfetti();
+      displayReward();
+      updateRewardExtras();
+    }
+  }, 105);
+}
+
+/* PERBARUI FUNGSI TAMPILAN HADIAH TANPA MENGHAPUSNYA */
+
+const originalDisplayReward = displayReward;
+
+displayReward = function() {
+  originalDisplayReward();
+  updateRewardExtras();
+};
+
+/* PERBARUI KONFIRMASI GURU */
+
+document.getElementById('confirmReward').onclick = () => {
+  if (openingGift || !rewardData.pending || state.points < 100) return;
+
+  const pending = rewardData.pending;
+
+  if (pending.accepted !== true) {
+    alert('Santri harus menerima hadiah terlebih dahulu.');
+    return;
+  }
+
+  const gift = DAFTAR_HADIAH[pending.index] || DAFTAR_HADIAH[0];
+
+  const approved = confirm(
+    'KONFIRMASI GURU\n\n' +
+    'Hadiah: ' + gift.nama + '\n\n' +
+    'Apakah hadiah benar-benar sudah diberikan kepada santri?\n\n' +
+    'Jika ya, 100 XP akan dikurangi.'
+  );
+
+  if (!approved) return;
+
+  state.points -= 100;
+
+  state.history.push({
+    code: KODE_KUIS,
+    result: 'hadiah',
+    gift: gift.nama,
+    points: state.points,
+    at: new Date().toISOString()
+  });
+
+  rewardData.count = (rewardData.count || 0) + 1;
+  rewardData.pending = null;
+
+  saveReward();
+  save();
+
+  rewardSound();
+  rewardConfetti();
+
+  render();
+  closeReward();
+
+  alert(
+    '🏆 Alhamdulillah!\n\n' +
+    'Hadiah ' + gift.nama + ' berhasil diberikan.\n' +
+    '100 XP telah dikurangi.\n\n' +
+    'Semangat mengumpulkan XP lagi!'
+  );
+};
+
+/* JIKA XP DIUBAH KE BAWAH 100, BATALKAN PILIHAN TERTUNDA */
+
+const originalSetPoints = setPoints;
+
+setPoints = function(value, label) {
+  originalSetPoints(value, label);
+
+  if (state.points < 100 && rewardData.pending) {
+    rewardData.pending = null;
+    saveReward();
+  }
+
+  updateRewardButton();
+};
+
+/* SINKRONISASI TOMBOL HADIAH */
+
+const originalRender = render;
+
+render = function() {
+  originalRender();
+  updateRewardButton();
+};
+
+/* AKTIFKAN FITUR */
+
+setupRewardExtras();
+updateRewardButton();
+
 </script>
 </body></html>
